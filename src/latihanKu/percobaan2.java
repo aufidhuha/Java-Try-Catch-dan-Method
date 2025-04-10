@@ -39,45 +39,50 @@ public class percobaan2 {
         percobaan2 count = new percobaan2();
         Scanner input = new Scanner(System.in);
         
-        String status = ""; double hasil = 0;
-        System.out.println("Pilihan : \n"
-                + "1. Luas lingkaran\n"
-                + "2. Volume tabung\n"
-                + "3. Volume kerucut\n"
-                + "4. Volume bola\n");
-        
-        System.out.print("Masukkan pilihan : ");
-        byte pilihan = input.nextByte();
-        
-        if (pilihan == 1) {
-            System.out.print("Masukkan diameter : ");
-            int diameter = input.nextInt();
-            hasil = count.luas_lingkaran(diameter);
-            status = "Menghitung Luas Lingkaran";
-        } else if (pilihan == 2) {
-            System.out.print("Masukkan diameter : ");
-            int diameter = input.nextInt();
-            System.out.print("Masukkan tinggi   : ");
-            int tinggi = input.nextInt();
-            hasil = count.volume_tabung(diameter, tinggi);
-            status = "Menghitung Volume Tabung";
-        } else if (pilihan == 3) {
-            System.out.print("Masukkan diameter : ");
-            int diameter = input.nextInt();
-            System.out.print("Masukkan tinggi   : ");
-            int tinggi = input.nextInt();
-            hasil = count.volume_kerucut(diameter, tinggi);
-            status = "Menghitung Volume Kerucut";
-        } else if (pilihan == 4) {
-            System.out.print("Masukkan diameter : ");
-            int diameter = input.nextInt();
-            hasil = count.volume_bola(diameter);
-            status = "Menghitung Volume Bola";
-        } else {
-            status = "Input-an tidak valid";
+        try {
+            String status = "";
+            double hasil = 0;
+            System.out.println("Pilihan : \n"
+                    + "1. Luas lingkaran\n"
+                    + "2. Volume tabung\n"
+                    + "3. Volume kerucut\n"
+                    + "4. Volume bola\n");
+            
+            System.out.print("Masukkan pilihan : ");
+            byte pilihan = input.nextByte();
+            
+            if (pilihan == 1) {
+                System.out.print("Masukkan diameter : ");
+                int diameter = input.nextInt();
+                hasil = count.luas_lingkaran(diameter);
+                status = "Menghitung Luas Lingkaran";
+            } else if (pilihan == 2) {
+                System.out.print("Masukkan diameter : ");
+                int diameter = input.nextInt();
+                System.out.print("Masukkan tinggi   : ");
+                int tinggi = input.nextInt();
+                hasil = count.volume_tabung(diameter, tinggi);
+                status = "Menghitung Volume Tabung";
+            } else if (pilihan == 3) {
+                System.out.print("Masukkan diameter : ");
+                int diameter = input.nextInt();
+                System.out.print("Masukkan tinggi   : ");
+                int tinggi = input.nextInt();
+                hasil = count.volume_kerucut(diameter, tinggi);
+                status = "Menghitung Volume Kerucut";
+            } else if (pilihan == 4) {
+                System.out.print("Masukkan diameter : ");
+                int diameter = input.nextInt();
+                hasil = count.volume_bola(diameter);
+                status = "Menghitung Volume Bola";
+            } else {
+                status = "Input-an tidak valid";
+            }
+            
+            System.out.println("\nStatus\t: " + status);
+            System.out.println("Hasil\t: " + hasil);
+        } catch (Exception e) {
+            System.out.println("Input-an tidak valid");
         }
-        
-        System.out.println("\nStatus\t: " + status);
-        System.out.println("Hasil\t: " + hasil);
     }
 }
